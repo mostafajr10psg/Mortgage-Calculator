@@ -30,12 +30,27 @@ input {
   font-size: 1.5rem;
 }
 
+@media (max-width: 400px) {
+  .mortgage-label {
+    font-size: 1.4rem;
+  }
+}
+
 .mortgage-input {
   display: flex;
   height: 4.5rem;
   border-radius: var(--b-rad-5);
   border: 1px solid var(--slate-500);
   overflow: hidden;
+}
+
+.mortgage-input:has(input:focus) {
+  border-color: var(--lime);
+}
+
+.mortgage-input input:focus + span {
+  background-color: var(--lime);
+  color: var(--slate-900);
 }
 
 .mortgage-input:hover {
@@ -128,28 +143,34 @@ main {
   }
 }
 
-.mortgage-calc .heading {
+.heading {
   justify-content: space-between;
   margin-bottom: 3rem;
 }
 
-.mortgage-calc .heading h1 {
-  font-size: 2.2rem;
+.heading h1 {
+  font-size: 2.3rem;
   color: var(--slate-900);
 }
 
-.mortgage-calc .heading .clear-all {
+@media (max-width: 400px) {
+  .heading h1 {
+    font-size: 1.9rem;
+  }
+}
+
+.heading .clear-all {
   text-decoration: underline;
   color: var(--slate-700);
   cursor: pointer;
 }
 
-.mortgage-calc .heading .clear-all:hover {
+.heading .clear-all:hover {
   color: var(--slate-900);
 }
 
 @media (max-width: 400px) {
-  .mortgage-calc .heading .clear-all {
+  .heading .clear-all {
     font-size: 1.2rem;
   }
 }
@@ -161,8 +182,16 @@ main {
   font-weight: bold;
 }
 
-.mortgage-calc .amount .euro-sign {
+.amount .mortgage-input {
+  flex-direction: row-reverse;
+}
+
+.amount .euro-sign {
   width: 4.4rem;
+}
+
+.mortgage-calc .term-rate {
+  margin: 2.5rem 0;
 }
 
 .term-rate .years {
@@ -173,21 +202,8 @@ main {
   width: 6rem;
 }
 
-.mortgage-calc .amount span:has(+ input:focus) {
-  background-color: var(--lime);
-  color: var(--slate-900);
-}
-
-.mortgage-calc .amount .mortgage-input:has(input:focus) {
-  border-color: var(--lime);
-}
-
-.mortgage-calc .term-rate {
-  margin: 2.5rem 0;
-}
-
 @media (min-width: 401px) {
-  .mortgage-calc .term-rate {
+  .term-rate {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -195,7 +211,7 @@ main {
 }
 
 @media (max-width: 400px) {
-  .mortgage-calc .term-rate .term {
+  .term-rate .term {
     margin-bottom: 2.5rem;
   }
 }
@@ -261,8 +277,10 @@ button.calc-repayments {
   }
 }
 
-button.calc-repayments:hover {
-  background-color: rgb(215 218 47 / 50%);
+@media (min-width: 800px) {
+  button.calc-repayments:hover {
+    background-color: rgb(215 218 47 / 50%);
+  }
 }
 
 button.calc-repayments:active {
