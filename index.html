@@ -20,45 +20,45 @@
           <button class="clear-all" type="button">Clear All</button>
         </div>
         <div class="amount">
-          <label>Mortgage Amount</label>
+          <label for="amount" class="mortgage-label">Mortgage Amount</label>
           <div class="mortgage-input">
             <span class="euro-sign d-flex-center">£</span>
-            <input type="text" />
+            <input id="amount" type="text" />
           </div>
           <p class="error-msg hidden">This field is required</p>
         </div>
         <div class="term-rate">
           <div class="term flex-1">
-            <label>Mortgage Term</label>
+            <label for="term" class="mortgage-label">Mortgage Term</label>
             <div class="mortgage-input">
-              <input type="text" />
+              <input id="term" type="text" />
               <span class="years d-flex-center">years</span>
             </div>
             <p class="error-msg hidden">This field is required</p>
           </div>
           <div class="rate flex-1">
-            <label>Interest Rate</label>
+            <label for="rate" class="mortgage-label">Interest Rate</label>
             <div class="mortgage-input">
-              <input type="text" />
+              <input id="rate" type="text" />
               <span class="percent d-flex-center">%</span>
             </div>
             <p class="error-msg hidden">This field is required</p>
           </div>
         </div>
         <div class="mortgage-type">
-          <label>Mortgage Type</label>
+          <h3 class="mortgage-label">Mortgage Type</h3>
           <div class="repayment">
-            <input type="radio" name="mortgage-type" id="repayment" />
-            <label for="repayment" class="mortgage-input">
+            <label class="mortgage-input">
+              <input type="radio" name="mortgage-type" />
               <div class="circle-radio d-flex-center"></div>
-              <p>Repayment</p>
+              <span>Repayment</span>
             </label>
           </div>
           <div class="interest">
-            <input type="radio" name="mortgage-type" id="interest" />
-            <label for="interest" class="mortgage-input">
+            <label class="mortgage-input">
+              <input type="radio" name="mortgage-type" />
               <div class="circle-radio d-flex-center"></div>
-              <p>Interest Only</p>
+              <span>Interest Only</span>
             </label>
           </div>
           <p class="error-msg hidden">This field is required</p>

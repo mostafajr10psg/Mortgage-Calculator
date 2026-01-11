@@ -1,9 +1,11 @@
 const amountInput = document.querySelector(".amount input");
 const termInput = document.querySelector(".term input");
 const rateInput = document.querySelector(".rate input");
-const repaymentInput = document.getElementById("repayment");
-const interestInput = document.getElementById("interest");
+
+const repaymentInput = document.querySelector(".repayment input");
+const interestInput = document.querySelector(".interest input");
 const mortgageTypeError = document.querySelector(".mortgage-type .error-msg");
+
 const emptyResult = document.querySelector(".empty-result");
 const showResult = document.querySelector(".show-result");
 const result = document.querySelector(".result");
