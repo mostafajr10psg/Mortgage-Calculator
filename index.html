@@ -45,24 +45,21 @@
             <p class="error-msg hidden">This field is required</p>
           </div>
         </div>
-        <div class="mortgage-type">
-          <h3 class="mortgage-label">Mortgage Type</h3>
-          <div class="repayment">
-            <label class="mortgage-input">
-              <input type="radio" name="mortgage-type" />
-              <div class="circle-radio d-flex-center"></div>
-              <span>Repayment</span>
-            </label>
-          </div>
-          <div class="interest">
-            <label class="mortgage-input">
-              <input type="radio" name="mortgage-type" />
-              <div class="circle-radio d-flex-center"></div>
-              <span>Interest Only</span>
-            </label>
-          </div>
+        <fieldset class="mortgage-type">
+          <legend class="mortgage-label">Mortgage Type</legend>
+
+          <label class="repayment mortgage-input">
+            <input type="radio" name="mortgage-type" />
+            <span class="circle-radio d-flex-center"></span>
+            <span>Repayment</span>
+          </label>
+          <label class="interest mortgage-input">
+            <input type="radio" name="mortgage-type" />
+            <span class="circle-radio d-flex-center"></span>
+            <span>Interest Only</span>
+          </label>
           <p class="error-msg hidden">This field is required</p>
-        </div>
+        </fieldset>
         <button class="calc-repayments d-flex-center" type="button">
           <img src="imgs/icon-calculator.svg" alt="" />
           <p>Calculate Repayments</p>
