@@ -1,0 +1,382 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:where(a, input, button) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mortgage-input {
+  height: 4.5rem;
+  border-radius: var(--b-rad-5);
+  border: 1px solid var(--slate-500);
+  display: flex;
+  overflow: hidden;
+}
+
+.mortgage-input:hover {
+  border-color: var(--slate-900);
+}
+
+.mortgage-input input {
+  width: 100%;
+  padding-left: 1.3rem;
+  color: var(--slate-900);
+}
+
+/* Error State */
+.invalid-input {
+  border-color: var(--red);
+}
+
+.invalid-input span {
+  background-color: var(--red);
+  color: white;
+}
+
+.error-msg {
+  color: var(--red);
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+/* Error State */
+
+.hidden {
+  display: none !important;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+  --slate-100: hsl(202, 86%, 94%);
+  --slate-300: hsl(203, 41%, 72%);
+  --slate-500: hsl(200, 26%, 54%);
+  --slate-700: hsl(200, 24%, 40%);
+  --slate-900: hsl(202, 55%, 16%);
+  --b-rad-5: 5px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--slate-100);
+}
+
+main {
+  width: min(95rem, 95%);
+  background-color: white;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: flex;
+  }
+}
+
+@media (max-width: 799px) {
+  main {
+    width: min(50rem, 100%);
+    border-radius: 0;
+  }
+}
+
+:where(.mortgage-calc, .result) {
+  padding: 3.5rem;
+}
+
+@media (max-width: 400px) {
+  .mortgage-calc {
+    padding: 2rem 2rem 3rem;
+  }
+}
+
+.mortgage-calc .heading {
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.mortgage-calc .heading h1 {
+  font-size: 2.2rem;
+  color: var(--slate-900);
+}
+
+.mortgage-calc .heading .clear-all {
+  text-decoration: underline;
+  color: var(--slate-700);
+  cursor: pointer;
+}
+
+.mortgage-calc .heading .clear-all:hover {
+  color: var(--slate-900);
+}
+
+@media (max-width: 400px) {
+  .mortgage-calc .heading .clear-all {
+    font-size: 1.2rem;
+  }
+}
+
+.mortgage-calc label:not(.mortgage-type div label) {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--slate-700);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.mortgage-calc :where(.euro-sign, .years, .percent) {
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mortgage-calc .amount .euro-sign {
+  width: 4.4rem;
+}
+
+.term-rate .years {
+  width: 9rem;
+}
+
+.term-rate .percent {
+  width: 6rem;
+}
+
+.mortgage-calc .amount span:has(+ input:focus) {
+  background-color: var(--lime);
+  color: var(--slate-900);
+}
+
+.mortgage-calc .amount div:has(input:focus) {
+  border-color: var(--lime);
+}
+
+.mortgage-calc .term-rate {
+  margin: 2.5rem 0;
+}
+
+@media (min-width: 401px) {
+  .mortgage-calc .term-rate {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .mortgage-calc .term-rate .term {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.mortgage-type .repayment {
+  margin-bottom: 1rem;
+}
+
+.mortgage-type input {
+  appearance: none;
+  display: none;
+}
+
+.mortgage-type div label {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  padding-left: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mortgage-type div label:hover {
+  border-color: var(--lime);
+}
+
+.mortgage-type .circle-radio {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  outline: 1px solid var(--slate-900);
+  border: 3px solid white;
+}
+
+.mortgage-type input:checked + label {
+  background-color: rgb(250 250 225);
+  border-color: var(--lime);
+}
+
+.mortgage-type input:checked + label .circle-radio {
+  outline-color: var(--lime);
+  background-color: var(--lime);
+}
+
+button.calc-repayments {
+  margin-top: 3rem;
+  background-color: var(--lime);
+  padding: 1.4rem 3.3rem;
+  border-radius: 50px;
+  gap: 1rem;
+  transition: 0.3s background-color;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  button.calc-repayments {
+    width: 100%;
+  }
+}
+
+button.calc-repayments:hover {
+  background-color: rgb(215 218 47 / 50%);
+}
+
+button.calc-repayments:active {
+  transform: scale(0.98);
+}
+
+button.calc-repayments img {
+  width: 2.2rem;
+}
+
+.result {
+  background-color: var(--slate-900);
+  border-bottom-left-radius: 55px;
+}
+
+@media (max-width: 800px) {
+  .result {
+    border-bottom-left-radius: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .result {
+    padding: 3rem 2.3rem;
+  }
+}
+
+.empty-result {
+  text-align: center;
+}
+
+.empty-result img {
+  display: block;
+  margin: 0 auto;
+}
+
+.empty-result h2 {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 1.6rem 0;
+}
+
+.empty-result p {
+  color: var(--slate-300);
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.show-result {
+  color: var(--slate-300);
+  font-size: 1.5rem;
+}
+
+.show-result h2 {
+  color: white;
+  font-weight: 600;
+}
+
+.show-result > p {
+  max-width: 40rem;
+  margin: 1.5rem 0 3.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+  .show-result > p {
+    margin: 1.5rem 0 2.5rem;
+  }
+}
+
+.show-result .mortgage-info {
+  background-color: hsl(201.67deg 56.25% 12%);
+  border-radius: 10px;
+  padding: 2.5rem 3rem;
+  border-top: 4px solid var(--lime);
+}
+
+@media (max-width: 500px) {
+  .show-result .mortgage-info {
+    padding: 2rem;
+  }
+}
+
+.mortgage-info .monthly-repayments {
+  border-bottom: 1px solid var(--slate-700);
+}
+
+.mortgage-info .monthly-repayments .amount {
+  display: inline-block;
+  margin: 1rem 0 3rem;
+  font-size: 4.5rem;
+  color: var(--lime);
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .mortgage-info .monthly-repayments .amount {
+    font-size: 3.7rem;
+    margin: 1.7rem 0;
+  }
+}
+
+.mortgage-info .total {
+  margin-top: 3rem;
+}
+
+@media (max-width: 500px) {
+  .mortgage-info .total {
+    margin-top: 1.7rem;
+  }
+}
+
+.mortgage-info .total .amount {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 2.3rem;
+  color: white;
+  font-weight: 600;
+}

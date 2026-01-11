@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage-Repayment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/main.css" />
+  </head>
+  <body class="d-flex-center">
+    <main>
+      <section class="mortgage-calc flex-1">
+        <div class="heading d-flex-center">
+          <h1>Mortgage Calculator</h1>
+          <button class="clear-all" type="button">Clear All</button>
+        </div>
+        <div class="amount">
+          <label>Mortgage Amount</label>
+          <div class="mortgage-input">
+            <span class="euro-sign d-flex-center">£</span>
+            <input type="text" />
+          </div>
+          <p class="error-msg hidden">This field is required</p>
+        </div>
+        <div class="term-rate">
+          <div class="term flex-1">
+            <label>Mortgage Term</label>
+            <div class="mortgage-input">
+              <input type="text" />
+              <span class="years d-flex-center">years</span>
+            </div>
+            <p class="error-msg hidden">This field is required</p>
+          </div>
+          <div class="rate flex-1">
+            <label>Interest Rate</label>
+            <div class="mortgage-input">
+              <input type="text" />
+              <span class="percent d-flex-center">%</span>
+            </div>
+            <p class="error-msg hidden">This field is required</p>
+          </div>
+        </div>
+        <div class="mortgage-type">
+          <label>Mortgage Type</label>
+          <div class="repayment">
+            <input type="radio" name="mortgage-type" id="repayment" />
+            <label for="repayment" class="mortgage-input">
+              <div class="circle-radio d-flex-center"></div>
+              <p>Repayment</p>
+            </label>
+          </div>
+          <div class="interest">
+            <input type="radio" name="mortgage-type" id="interest" />
+            <label for="interest" class="mortgage-input">
+              <div class="circle-radio d-flex-center"></div>
+              <p>Interest Only</p>
+            </label>
+          </div>
+          <p class="error-msg hidden">This field is required</p>
+        </div>
+        <button class="calc-repayments d-flex-center" type="button">
+          <img src="imgs/icon-calculator.svg" alt="" />
+          <p>Calculate Repayments</p>
+        </button>
+      </section>
+      <section class="result d-flex-center flex-1">
+        <div class="empty-result">
+          <img src="imgs/illustration-empty.svg" alt="" />
+          <h2>Results shown here</h2>
+          <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+        </div>
+        <div class="show-result hidden">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided. To adjust the results, edit the form and
+            click "calculate repayments" again.
+          </p>
+          <div class="mortgage-info">
+            <div class="monthly-repayments">
+              <p>Your monthly repayments</p>
+              <span class="amount"></span>
+            </div>
+            <div class="total">
+              <p>Total you'll repay over the term</p>
+              <span class="amount"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="master.js"></script>
+  </body>
+</html>
