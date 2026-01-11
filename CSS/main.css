@@ -23,7 +23,7 @@ input {
 }
 
 .mortgage-label {
-  display: block;
+  display: inline-block;
   margin-bottom: 1rem;
   color: var(--slate-700);
   font-weight: 500;
